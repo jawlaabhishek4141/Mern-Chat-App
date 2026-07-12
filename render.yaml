@@ -1,0 +1,30 @@
+# Render Blueprint - deploys the backend as a web service.
+# See: https://render.com/docs/blueprint-spec
+#
+# Usage: connect this repo on Render and it will pick up this file, or
+# create the service manually and copy these settings.
+services:
+  - type: web
+    name: mern-chat-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false # set this in the Render dashboard (e.g. your MongoDB Atlas URI)
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_ORIGIN
+        sync: false # set to your deployed frontend URL (e.g. https://your-app.vercel.app)
+      - key: RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: RATE_LIMIT_MAX
+        value: "300"
