@@ -1,13 +1,3 @@
-## 🔗 Live Links
-
-- **Live App:** https://mern-chat-app-1-yzys.onrender.com
-- **Live Backend API:** https://mern-chat-app-jgkf.onrender.com
-- **GitHub Repo:** https://github.com/utsavjawla1919/Mern-Chat-App
-- **Screen Recording (Google Drive):** https://drive.google.com/file/d/1eZS9hgFhZ5flEC613Ur-bJkLGIEv9LKZ/view?usp=sharing
-
-
-
-
 
 # Wire — Real-Time MERN Chat Application
 
@@ -415,22 +405,6 @@ To run in the background: add `-d`. To stop: `docker-compose down` (add
    these are marked `sync: false` in the blueprint so Render won't
    overwrite them.
 4. Once live, copy the backend's `https://your-service.onrender.com` URL.
-
-### Frontend → Vercel
-1. Import the repo in Vercel, set the root directory to `frontend`.
-2. Framework preset: Vite. Build command `npm run build`, output `dist`.
-3. Set environment variables `VITE_API_BASE_URL` and `VITE_SOCKET_URL` to
-   your Render backend URL from above.
-4. Deploy. `vercel.json` in `frontend/` already handles the SPA rewrite
-   so React Router routes work on refresh.
-
-### MongoDB → Atlas
-1. Create a free cluster at mongodb.com/atlas.
-2. Add a database user and allow network access from your Render
-   service's IP (or `0.0.0.0/0` for simplicity during a demo).
-3. Copy the connection string into `MONGO_URI`.
-
----
 
 ## 12. About "React Native (preferred)"
 
